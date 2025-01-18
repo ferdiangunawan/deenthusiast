@@ -55,6 +55,11 @@ flutter:
     - assets/deen_main_cover.png
     - assets/deen_skema.png
     - assets/deen_principle.png
+    - assets/deen_advice.png
+    - assets/deen_hijrah.png
+    - assets/deen_left_hand.png
+    - assets/deen_right_hand.png
+    - assets/deen_sosmed.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

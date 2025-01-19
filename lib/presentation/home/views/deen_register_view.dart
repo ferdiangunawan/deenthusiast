@@ -3,6 +3,8 @@ import 'package:deenthusiast/utils/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
 class DeenRegisterView extends StatelessWidget {
   const DeenRegisterView(
@@ -26,31 +28,24 @@ class DeenRegisterView extends StatelessWidget {
       child: Column(
         children: [
           Gap(context.isMobile ? 24 : 34),
-          Text(
-            'add-vice',
-            style: GoogleFonts.openSans(
-              color: Colors.white,
-              fontSize: 40,
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Image.asset(
+                  'assets/deen_advice.png',
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+              const Gap(24),
+              Expanded(
+                child: Image.asset(
+                  'assets/deen_hijrah.png',
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ],
           ),
-          // Row(
-          //   children: [
-          //     Expanded(
-          //       child: Image.asset(
-          //         'assets/deen_advice.png',
-          //         fit: BoxFit.fitWidth,
-          //       ),
-          //     ),
-          //     const Gap(24),
-          //     Expanded(
-          //       child: Image.asset(
-          //         'assets/deen_hijrah.png',
-          //         fit: BoxFit.fitWidth,
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          DeenTextField(label: 'Name', nameController: nameController),
+          DeenTextField(label: 'Nama', nameController: nameController),
           Gap(context.isMobile ? 8 : 12),
           DeenTextField(label: 'Asal', nameController: addressController),
           Gap(context.isMobile ? 8 : 12),
@@ -58,7 +53,13 @@ class DeenRegisterView extends StatelessWidget {
           const Gap(24),
           InkWell(
             splashColor: DeenColors.primaryColor,
-            onTap: () {},
+            onTap: () {
+              final url = Uri.parse(
+                'https://chat.whatsapp.com/EauedZa7VVOHDFWLi2Cezt',
+              );
+
+              launchUrl(url);
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 12,
